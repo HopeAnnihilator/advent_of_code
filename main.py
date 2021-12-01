@@ -1,4 +1,4 @@
-import time, os, random, getpass
+import time, os, random, sys
 
 from day01.solve import *
 
@@ -18,6 +18,8 @@ HELP - DISPLAY HELP MENU
 SOLVE - SOLVE PROBLEM OF THE DAY
     EX: SOLVE DAY01
 CLEAR - CLEAR CONSOLE
+RESET - RESTART CONSOLE
+EXIT - EXIT CONSOLE
 
 '''
 
@@ -77,6 +79,12 @@ def command_and_control():
             printer('CLEARING....\n\r')
             os.system('cls' if os.name=='nt' else 'clear')
             time.sleep(term_delay)
+        case "reset":
+            printer('\nPREPARING TO RESET....\n\n\t')
+            init()
+        case "exit":
+            printer('\nYOU CANT DO TH......')
+            sys.exit()
         case _:
             printer('''\nYOU FUCKED IT UP >:(
                 \rYOU TYPED: ''' + s + '''
