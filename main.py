@@ -1,4 +1,4 @@
-import time, os
+import time, os, random
 
 from day01.solve import *
 
@@ -23,7 +23,7 @@ days = {
 }
 
 def printer(menu):
-    counter = 0
+    counter = random.randint(0, 1)
     if type(menu) == str:
         for i in menu:
             if counter % 2:
@@ -47,6 +47,7 @@ def help_menu():
     printer(help)
 
 def solve_day(s):
+    time.sleep(0.5)
     printer(days[s])
     print('\r')
 
@@ -61,14 +62,16 @@ def command_and_control():
             try:
                 solve_day(s.lower().split(' ')[1])
             except:
-                printer('\nYOU FUCKED IT UP >:(')
-                printer('YOU TYPED: ' + s)
-                printer('THIS IS NOT A VALID DAY')
+                printer('''\nYOU FUCKED IT UP >:(
+                    \rYOU TYPED: ''' + s + '''
+                    \rTHIS IS NOT A VALID DAY
+                ''')
                 help_menu()
         case _:
-            printer('\nYOU FUCKED IT UP >:(')
-            printer('YOU TYPED: ' + s)
-            printer('THIS IS UNACCEPTABLE')
+            printer('''\nYOU FUCKED IT UP >:(
+                \rYOU TYPED: ''' + s + '''
+                \rTHIS IS UNACCEPTABLE
+            ''')
             help_menu()
 
 
