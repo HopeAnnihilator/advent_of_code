@@ -24,7 +24,7 @@ EXIT - EXIT CONSOLE
 '''
 
 days = {
-    'day01': [day01_01(), day01_02()]
+    'day01': [day01_01([int(i) for i in open('day01/input', 'r').readlines()]), day01_02([int(i) for i in open('day01/input', 'r').readlines()])]
 }
 
 def printer(menu):
