@@ -1,5 +1,4 @@
 import driver
-from day01.solve import day01
 
 driver.init()
 while True:
