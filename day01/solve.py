@@ -1,7 +1,6 @@
-def day01_01():
+def day01():
     f = [int(i) for i in open('day01/input', 'r').readlines()]
-    return [f[i] > f[i - 1] for i in range(1, len(f))].count(True)
+    return solve(f, 1), solve (f, 3)
 
-def day01_02():
-    f = [int(i) for i in open('day01/input', 'r').readlines()]
-    return [f[i] > f[i -3] for i in range(1, len(f))].count(True)
+def solve(f, n):
+    return [f[i] > f[i -n] for i in range(1, len(f))].count(True)
