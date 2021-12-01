@@ -15,6 +15,7 @@ help = '''
 HELP - DISPLAY HELP MENU
 SOLVE - SOLVE PROBLEM OF THE DAY
     EX: SOLVE DAY01
+CLEAR - CLEAR CONSOLE
 
 '''
 
@@ -67,6 +68,12 @@ def command_and_control():
                     \rTHIS IS NOT A VALID DAY
                 ''')
                 help_menu()
+        case "clear":
+            printer('\nPREPARING TO CLEAR\n\n')
+            time.sleep(1)
+            printer('CLEARING\n\r')
+            time.sleep(0.5)
+            os.system('cls' if os.name=='nt' else 'clear')
         case _:
             printer('''\nYOU FUCKED IT UP >:(
                 \rYOU TYPED: ''' + s + '''
