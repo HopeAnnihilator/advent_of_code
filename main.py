@@ -7,12 +7,15 @@ WELCOME TO THE CONTROL CENTER
 PREPARING SUITABLE ENVIRONMENT
 INITILIAZING ELVES
 BOOTING......
-CONSOLE READY'''
+CONSOLE READY
+
+'''
 
 help = '''
 HELP - DISPLAY HELP MENU
 SOLVE - SOLVE PROBLEM OF THE DAY
     EX: SOLVE DAY01
+
 '''
 
 days = {
@@ -20,14 +23,20 @@ days = {
 }
 
 def printer(menu):
+    counter = 0
     if type(menu) == str:
-        for line in menu.split('\n'):
-            print(line)
-            time.sleep(0.5)
+        for i in menu:
+            if counter % 2:
+                print(i.upper(), end = '')
+            else:
+                print(i.lower(), end = '')
+            if i == '\n':
+                time.sleep(0.5)
+            counter += 1
     else:
         for i in range(len(menu)):
-            print('SOLUTION ' + str(i + 1) + ' IS ' + str(menu[i]))
-            time.sleep(0.5)
+            printer('SOLUTION ' + str(i + 1) + ' IS ' + str(menu[i]) + '\n')
+
 
 
 def init():
@@ -42,8 +51,8 @@ def solve_day(s):
     print('\r')
 
 def command_and_control():
-    print('AWAITING USER INPUT\n')
-    time.sleep(0.5)
+    printer('AWAITING USER INPUT\n\n')
+
     s = input("")
     match s.lower().split(' ')[0]:
         case "help":
