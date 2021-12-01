@@ -1,5 +1,6 @@
 # ignore venv
 .venv
+.venvWin
 
 #ignore cache
 **/__pycache__
