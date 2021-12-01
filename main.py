@@ -9,7 +9,7 @@ WELCOME TO THE CONTROL CENTER
 PREPARING SUITABLE ENVIRONMENT
 INITILIAZING ELVES
 BOOTING......
-\tCONSOLE READY
+\t\tCONSOLE READY
 
 '''
 
@@ -32,7 +32,7 @@ def printer(menu):
     if type(menu) == str:
         for i in menu:
             if i == '\t':
-                time.sleep(term_delay * 5)
+                time.sleep(term_delay * 2)
             elif counter % 2:
                 print(i.upper(), end = '')
             else:
@@ -69,8 +69,8 @@ def command_and_control():
             try:
                 solve_day(s.lower().split(' ')[1])
             except:
-                printer('''\nYOU FUCKED IT UP >:(
-                    \rYOU TYPED: ''' + s + '''
+                printer(f'''\nYOU FUCKED IT UP >:(
+                    \rYOU TYPED: {s}
                     \rTHIS IS NOT A VALID DAY
                 ''')
                 help_menu()
@@ -86,8 +86,8 @@ def command_and_control():
             printer('\nYOU CANT DO TH......')
             sys.exit()
         case _:
-            printer('''\nYOU FUCKED IT UP >:(
-                \rYOU TYPED: ''' + s + '''
+            printer(f'''\nYOU FUCKED IT UP >:(
+                \rYOU TYPED: {s}
                 \rTHIS IS UNACCEPTABLE
             ''')
             help_menu()

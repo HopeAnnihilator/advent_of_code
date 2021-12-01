@@ -5,7 +5,7 @@ def day01_01():
     f = open('day01/input', 'r')
 
     depths = [int(f.readline())]
-    
+
     # solve shits
     for line in zip(f):
         depths.append(int(line[0]))
@@ -28,7 +28,7 @@ def day01_02():
     # solve shit
     for line in zip(f):
         depths.append(int(line[0]))
-        prevWindow = depths[1] + depths [2]
+        prevWindow = depths[1] + depths[2]
         currWindow = depths[3] + prevWindow
         prevWindow += depths[0]
         if currWindow > prevWindow:
