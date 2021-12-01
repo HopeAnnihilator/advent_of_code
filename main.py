@@ -9,7 +9,7 @@ WELCOME TO THE CONTROL CENTER
 PREPARING SUITABLE ENVIRONMENT
 INITILIAZING ELVES
 BOOTING......
-CONSOLE READY
+\tCONSOLE READY
 
 '''
 
@@ -29,7 +29,9 @@ def printer(menu):
     counter = random.randint(0, 1)
     if type(menu) == str:
         for i in menu:
-            if counter % 2:
+            if i == '\t':
+                time.sleep(term_delay * 5)
+            elif counter % 2:
                 print(i.upper(), end = '')
             else:
                 print(i.lower(), end = '')
@@ -71,12 +73,10 @@ def command_and_control():
                 ''')
                 help_menu()
         case "clear":
-            printer('\nPREPARING TO CLEAR\n\n')
-            time.sleep(term_delay * 3)
-            printer('CLEARING\n\r')
-            time.sleep(term_delay)
+            printer('\nPREPARING TO CLEAR....\n\n\t')
+            printer('CLEARING....\n\r')
             os.system('cls' if os.name=='nt' else 'clear')
-            time.sleep(0.5)
+            time.sleep(term_delay)
         case _:
             printer('''\nYOU FUCKED IT UP >:(
                 \rYOU TYPED: ''' + s + '''
