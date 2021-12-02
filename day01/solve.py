@@ -1,6 +1,6 @@
 def day01():
     # read file into array
-    f = [int(i) for i in open('day01/input', 'r').readlines()]
+    f = [int(i) for i in open('day01/input')]
     # solve and return tuple
     return solve(f, 1), solve (f, 3)
 
