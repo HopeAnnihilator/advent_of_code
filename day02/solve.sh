@@ -1,0 +1,1 @@
+awk '/f/{(f += $2) && (c += $2 * d)} /u/{d -= $2} /n/{d += $2} END {print f * d; print f * c}' input
