@@ -39,10 +39,11 @@ def check_row(data, obj, objValues):
     if len(data['rowIterTmp']) == 1:
         data[obj] += data['rowIterTmp'][0]
     else:
-        if objValues == 'linesO':
-            data[obj] += str(int(data['rowIterTmp'].count('1') > len(data['rowIterTmp']) / 2))
-        else: 
-            data[obj] += str(int(data['rowIterTmp'].count('1') < len(data['rowIterTmp']) / 2))
+        match objValues:
+            case 'linesO':
+                data[obj] += str(int(data['rowIterTmp'].count('1') > len(data['rowIterTmp']) / 2))
+            case 'linesCO':
+                data[obj] += str(int(data['rowIterTmp'].count('1') < len(data['rowIterTmp']) / 2))
 
         n = 0
         while n < len(data[objValues]):
