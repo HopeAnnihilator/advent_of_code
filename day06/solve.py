@@ -5,17 +5,8 @@ def day06():
 
 def iterate(years, fishies):
     for year in range(1, max(years) + 1):
-        tmp = [
-            fishies[1],
-            fishies[2],
-            fishies[3], 
-            fishies[4],
-            fishies[5],
-            fishies[6],
-            fishies[7] + fishies[0],
-            fishies[8],
-            fishies[0]
-        ]
-        fishies = tmp
+        fishies.append(fishies[0])
+        fishies[7] += fishies[0]
+        fishies.pop(0)
         if year in years:
             yield sum(fishies)
