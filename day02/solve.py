@@ -12,5 +12,6 @@ def cheat(i):
     else:
         aim -= int(i[-2:-1])
     return 0
+    
 def day02_02():
     return(sum([int(i[-2:-1]) if len(i) == 10 else 0 for i in open('day02/input')]) * sum([int(i[-2:-1]) * aim if len(i) == 10 else cheat(i) for i in open('day02/input')]))
