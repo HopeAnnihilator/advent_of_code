@@ -18,7 +18,6 @@ def day09_01(f):
 def day09_02(f):
     row = 0
     col = 0
-    lows = []
     basins = [] 
     while row < len(f):
         basin = []
@@ -29,15 +28,12 @@ def day09_02(f):
         elif f[row][col] == 9:
             col += 1
         else:
-            if f[row][col] < min(edges):
-                lows.append(f[row][col] + 1)
-
-                if sum(edges) == 9 * 4:
-                    row += 1
-                else:
-                    trace(f, row, col, basin)
-                    col = 0
-                    basins.append(len(basin))
+            if sum(edges) == 9 * 4:
+                row += 1
+            elif f[row][col] < min(edges):
+                trace(f, row, col, basin)
+                col = 0
+                basins.append(len(basin))
             else:
                 match edges.index(min(edges)):
                     case 0:
