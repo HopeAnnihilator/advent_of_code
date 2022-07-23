@@ -1,0 +1,5 @@
+The goal of this exercise is to find where 2 wires intersect. The paths of the wires follows a system moving in 1 of 4 directions. The direction as well as distance is determined by instructions provided in input. Instructions begin by stating the directions; (U)p, (D)own, (L)eft or (R)ight. Following the direction is an integer which tells how many units the wire travels in that direction.
+
+The first puzzle focuses on finding the intersection closes to 0 0 using Manhattan Distance. To find the distance from 0 0, add the absolute value of both the X and Y coordinate. From there, find the smallest distance which is the solution.
+
+The second puzzle focuses on finding how many steps the wire took to move from 0 0 to the lowest-step intersection. To do this log each movement by the wire in the order it was taken, then use the position of the intersection in both lists to add together (plus one for each list because python lists start at 0) and find the smallest value which is the solution.

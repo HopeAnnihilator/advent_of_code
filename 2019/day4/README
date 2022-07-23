@@ -1,0 +1,5 @@
+Given a range of numbers, the user is tasked with finding how many possible values follow a set of rules.
+1. The number is 6 digits.
+2. There must be at least 1 pair or larger of matching digits.
+3. For puzzle #2 those digits must be a pair and no larger.
+4. The digits must always increase or stay the say when moving left to right.

@@ -7,10 +7,7 @@ def day09_01(f):
     lows = []
     for row in range(len(f)):
         for col in range(len(f[row])):
-            edges = [f[abs(row - 1)][col], f[row][abs(col - 1)]]
-            add_edge(f, abs(row + 1), col, edges)
-            add_edge(f, row, abs(col + 1), edges)
-            
+            edges = find_edges(f, row, col)
             if f[row][col] < min(edges):
                 lows.append(f[row][col] + 1)
     return sum(lows)
@@ -90,3 +87,4 @@ def add_edge(f, row, col, edges):
     except:
         edges.append(9)
 
+print(day09())

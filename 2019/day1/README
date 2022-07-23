@@ -1,0 +1,5 @@
+The goal of this exercise is to follow a math formula to determine how the values given in the original formula can be added to obtain the desired output.
+
+The first puzzle involves running both the equation with the given input then adding all output together to find the answer.
+
+The second puzzle ran the equation similar to first but used only positive output and output greater than zero. Also for each given value added to the total you must then add that output if it meets the same requirements.

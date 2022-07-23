@@ -1,0 +1,5 @@
+Following opcodes in an instruction set, the user is tasked with using these instructions to find values given at the end of execution. 
+
+The first puzzle revolves around using your instruction set with a slight modification of value1 = 12 and value2 = 2, then running the program until it reaches the exit opcode and submitting the value at place 0.
+
+The second puzzle uses a solution to find the necessary noun and verb to reach that answer (value1 = noun, value2 = verb). The values that give the solution are between 0 and 99 and the user must check all of them to find the correct set.
