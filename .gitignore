@@ -4,3 +4,7 @@
 
 #ignore cache
 **/__pycache__
+
+# ignore rust things
+**/target 
+**/Cargo*
