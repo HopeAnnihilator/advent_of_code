@@ -8,3 +8,6 @@
 # ignore rust things
 **/target 
 **/Cargo*
+
+# ignore binaries
+**/*.exe
