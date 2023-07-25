@@ -35,9 +35,7 @@ func main() {
 	reader.Split(bufio.ScanLines)
 	for reader.Scan() {
 		strategy := strings.Split(reader.Text(), " ")
-		// myMove := int(strategy[0][0]) - 64
 		opponentMove := int(strategy[0][0]) - 64
-		// opponentMove := int(strategy[1][0]) - 87
 		myMove := int(strategy[1][0]) - 88
 
 		// not typecasting bool to int is so much simpler right????????
