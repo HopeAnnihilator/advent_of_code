@@ -11,3 +11,6 @@
 
 # ignore binaries
 **/*.exe
+
+# ignore go files
+go.work*
