@@ -29,6 +29,7 @@ func main() {
 	reader := bufio.NewScanner(file)
 	reader.Split(bufio.ScanLines)
 
+	// parse input into sortable timestamps
 	for reader.Scan() {
 		inData := strings.Split(reader.Text(), " ")
 		date := strings.Split(inData[0][1:], "-")
@@ -56,12 +57,11 @@ func main() {
 		}
 	}
 
+	// sort timestamps
 	keys := make([]int, 0, len(schedules))
-
 	for k := range schedules {
 		keys = append(keys, k)
 	}
-
 	sort.Ints(keys)
 
 	currGuard := map[string]int{
@@ -69,6 +69,7 @@ func main() {
 		"sleepStart": 0,
 	}
 
+	// find how long each guard slept and what mins they were asleep
 	for _, key := range keys {
 		switch schedules[key] {
 		case -1:
@@ -93,6 +94,7 @@ func main() {
 		}
 	}
 
+	// find which guard slept the most overall and which guard slept most on any given minute
 	guardTracker := map[string]int{
 		"id":                0,
 		"timeSlept":         0,
@@ -127,13 +129,15 @@ func main() {
 		}
 	}
 
-	println("Most Slept Guard       :", guardTracker["id"])
-	println("Time Slept             :", guardTracker["timeSlept"])
-	println("Most Slept Minute      :", guardTracker["mostSleptMin"])
-	println("Minute Overlaps        :", guardTracker["mostSleptMinCount"])
-	println("Most Slept At Min      :", guardTracker["mostSleptAtMin"])
-	println("Most Slept At Min Guard:", guardTracker["mostSleptAtMinId"])
-	println("Most Slept At Min Count:", guardTracker["mostSleptAtMinCount"])
-	println("Part 1 Solution        :", guardTracker["id"]*guardTracker["mostSleptMin"])
-	println("Part 2 Solution        :", guardTracker["mostSleptAtMinId"]*guardTracker["mostSleptAtMin"])
+	println("Most Slept Guard        :", guardTracker["id"])
+	println("Time Slept              :", guardTracker["timeSlept"])
+	println("Most Slept Minute       :", guardTracker["mostSleptMin"])
+	println("Minute Overlaps         :", guardTracker["mostSleptMinCount"])
+	println()
+	println("Most Slept At Min Guard :", guardTracker["mostSleptAtMinId"])
+	println("Most Slept At Min       :", guardTracker["mostSleptAtMin"])
+	println("Most Slept At Min Count :", guardTracker["mostSleptAtMinCount"])
+	println()
+	println("Part 1 Solution         :", guardTracker["id"]*guardTracker["mostSleptMin"])
+	println("Part 2 Solution         :", guardTracker["mostSleptAtMinId"]*guardTracker["mostSleptAtMin"])
 }
