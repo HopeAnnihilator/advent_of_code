@@ -3,5 +3,5 @@
 ```
 docker pull golang:1.20
 docker build . --no-cache -t aoc/2018/<day>
-docker run --rm -it aoc/2018/day04
+docker run --rm -it aoc/2018/<day>
 ```
