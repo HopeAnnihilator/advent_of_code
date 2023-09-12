@@ -16,7 +16,7 @@ func main() {
 	// get sys args
 	args := os.Args
 	if len(args) < 1 {
-		log.Fatal("Run as: ./day03 ./input.txt")
+		log.Fatal("Run as: ./day04 ./input.txt")
 	}
 
 	// open input file

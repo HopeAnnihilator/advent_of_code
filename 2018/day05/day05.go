@@ -7,6 +7,7 @@ import (
 	"sort"
 )
 
+// process polymer by removing consecutive chars with varying case
 func react_polymer(polymer []byte) []byte {
 	for {
 		change := false
@@ -24,6 +25,7 @@ func react_polymer(polymer []byte) []byte {
 	return polymer
 }
 
+// strip upper and lowercase char from polymer
 func strip_polymer(polymer []byte, chr int) []byte {
 	for {
 		change := false
@@ -75,6 +77,7 @@ func main() {
 		tmpPoly = react_polymer(tmpPoly)
 		polyLens[i] = len(tmpPoly)
 	}
+
 	// create slice from backing array and sort
 	polyLensSlice := polyLens[:]
 	sort.Ints(polyLensSlice)
